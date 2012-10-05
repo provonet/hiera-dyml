@@ -9,6 +9,15 @@ class Hiera
         Hiera.debug("Hiera Dyml backend starting")
       end
 
+      def deep_merge_options
+        @options ||= {}.tap do |options|
+          backend_options = Hiera::Config[:dyml]
+          [:knockout_prefix, :preserve_unmergeables, :sort_merged_arrays, :unpack_arrays].each do |key|
+            options[key] = backend_options[key] if backend_options.include?(key)
+          end
+        end
+      end
+
       def lookup(key, scope, order_override, resolution_type)
         answer = nil
         Hiera.debug("Looking up #{key} in DYML backend")
@@ -20,7 +29,7 @@ class Hiera
           files << yamlfile 
         end
 
-        files.reverse.each {|f| data.deep_merge!(YAML.load_file(f))} unless files.empty?
+        files.reverse.each { |f| data.deep_merge!(YAML.load_file(f), deep_merge_options) } unless files.empty?
 
         if data.include?(key)
           new_answer = Backend.parse_answer(data[key], scope)
