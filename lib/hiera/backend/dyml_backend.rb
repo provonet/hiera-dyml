@@ -10,7 +10,7 @@ class Hiera
       end
 
       def lookup(key, scope, order_override, resolution_type)
-        answer = Backend.empty_answer(resolution_type)
+        answer = nil
         Hiera.debug("Looking up #{key} in DYML backend")
         files = []
         data = {}
