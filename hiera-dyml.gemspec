@@ -10,7 +10,7 @@ Gem::Specification.new do |gem|
     gem.description = "Hiera YAML backend with support for deep merging of hashes"
 
     gem.require_path = "lib"
-    gem.files        = FileList["lib/**/*"].to_a
+    gem.files        = Dir["lib/**/*"].select { |f| File.file? f }
 
     gem.add_dependency('hiera', '>=1.0.0')
     gem.add_dependency('deep_merge', '>=1.0.0')
