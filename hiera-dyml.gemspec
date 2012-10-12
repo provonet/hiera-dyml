@@ -1,7 +1,6 @@
-require 'rubygems'
-require 'rake/gempackagetask'
+# -*- encoding: utf-8 -*-
 
-spec = Gem::Specification.new do |gem|
+Gem::Specification.new do |gem|
   gem.name        = "hiera-dyml"
   gem.version     = "0.0.2"
   gem.summary     = "DeepMerge YAML backend  for Hiera"
@@ -16,9 +15,3 @@ spec = Gem::Specification.new do |gem|
   gem.add_dependency('hiera', '>=1.0.0')
   gem.add_dependency('deep_merge', '>=1.0.0')
 end
-
-Rake::GemPackageTask.new(spec) do |pkg|
-    pkg.need_tar = true
-end
-
-task :default => :repackage

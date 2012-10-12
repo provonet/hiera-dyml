@@ -48,3 +48,4 @@ Who?
 ====
 
 Johan Bakker / johan.bakker@panifex.nl / @panifexnl
+Gregory Becker / @igreg [some fixes]
