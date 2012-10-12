@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |gem|
   gem.name        = "hiera-dyml"
-  gem.version     = "0.0.2"
+  gem.version     = "0.0.3"
   gem.summary     = "DeepMerge YAML backend  for Hiera"
   gem.email       = "johan.bakker@panifex.nl"
   gem.author      = "Johan Bakker"
