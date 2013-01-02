@@ -46,6 +46,6 @@ resolv:
 Who?
 ====
 
-Johan Bakker / johan.bakker@panifex.nl / @panifexnl
+Johan Bakker / @provonet
 Gregory Becker / @igreg [some fixes]
 Wayne Zhang / @hopecream [Reporting conflicts with ActiveSupport]
