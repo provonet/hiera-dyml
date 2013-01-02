@@ -2,7 +2,7 @@ What?
 =====
 
 A yaml backend for Hiera that will merge hashes by using the
-excelent deep_merge.
+excelent deep_merge gem.
 
 Usage?
 ======
@@ -48,3 +48,4 @@ Who?
 
 Johan Bakker / johan.bakker@panifex.nl / @panifexnl
 Gregory Becker / @igreg [some fixes]
+Wayne Zhang / @hopecream [Reporting conflicts with ActiveSupport]
