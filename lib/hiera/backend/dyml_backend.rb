@@ -5,7 +5,7 @@ class Hiera
 
       def initialize
         require 'yaml'
-        require 'deep_merge'
+        require 'deep_merge/rails_compat'
         Hiera.debug("Hiera Dyml backend starting")
       end
 
@@ -26,10 +26,10 @@ class Hiera
         Backend.datasources(scope, order_override) do |source|
           Hiera.debug("Looking for data source #{source}")
           yamlfile = Backend.datafile(:dyml, scope, source, "yaml") || next
-          files << yamlfile 
+          files << yamlfile
         end
 
-        files.reverse.each { |f| data.deep_merge!(YAML.load_file(f), deep_merge_options) } unless files.empty?
+        files.reverse.each { |f| data.deeper_merge!(YAML.load_file(f), deep_merge_options) } unless files.empty?
 
         if data.include?(key)
           new_answer = Backend.parse_answer(data[key], scope)
