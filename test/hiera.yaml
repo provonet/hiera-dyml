@@ -1,0 +1,11 @@
+:backends:
+  - dyml
+
+:logger: console
+
+:hierarchy:
+  - '%{hostname}' 
+  - default
+
+:dyml:
+  :datadir: .
